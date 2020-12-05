@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Final Space</title>
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.5.3/css/bootstrap.min.css} "/>
+</head>
+<body>
+<h4>Final Space - Characters</h4>
+<br/>
+<table class="table table-dark">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Picture</th>
+        <th scope="col">Name</th>
+        <th scope="col">Status</th>
+        <th scope="col">Species</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Origin</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="character:${characters}">
+        <th scope="row" th:text="${character.getId()}" />
+        <td> <img th:src="${character.getImgUrl()}"/></td>
+        <td th:text="${character.getName()}"/>
+        <td th:text="${character.getStatus()}"/>
+        <td th:text="${character.getSpecies()}"/>
+        <td th:text="${character.getGender()}"/>
+        <td th:text="${character.getOrigin()}"/>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
